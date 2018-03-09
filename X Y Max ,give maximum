@@ -1,0 +1,13 @@
+domains
+    x = integer
+    
+predicates
+    max(x,x,x)
+    
+clauses
+    max(X,Y,Max) :-
+        X > Y,!,
+        Max = X.
+        
+    max(X,Y,Max) :-
+        Max = Y.

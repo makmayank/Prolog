@@ -1,0 +1,10 @@
+drop(Xs,N,Rs) :-
+  integer(N) ,
+  N > 0 ,
+  drop(Xs,1,N,Rs)
+
+drop( []     , _ , _ , [] ) .
+drop( [X|Xs] , P , N , Rs ) :-
+  ( 0 =:= P mod N -> R1 = Rs ; [X|R1] = Rs ) ,
+  P1 is P+1 ,
+  drop(Xs,P1,N,R1)
